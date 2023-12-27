@@ -11,37 +11,44 @@ export const Form = ({ taskList, setTaskList }) => {
   };
   return (
     <>
-      <Stack
-        direction="row"
-        justifyContent="center"
-        spacing={2}
-        sx={{ marginTop: "10px" }}
-      >
-        <TextField
-          type="text"
-          label="Add task"
-          variant="outlined"
-          sx={{ width: "400px" }}
-        />
-        <Button
-          variant="contained"
-          size="large"
-          sx={{
-            width: "90px",
-            backgroundColor: "rgb(53, 53, 53)",
-            fontFamily: '"Poppins", sans-serif',
-            "&:hover": {
-              backgroundColor: "black",
-            },
-          }}
-          disableRipple
-          disableElevation
-        >
-          Add
-        </Button>
+      <Stack direction="row" justifyContent="center" sx={{ marginTop: "10px" }}>
+        <form onSubmit={handleSubmit}>
+          <TextField
+            type="text"
+            label="Add task"
+            variant="outlined"
+            sx={{ width: "400px", marginRight: "16px" }}
+            value={task.name}
+            onChange={(event) =>
+              setTask({
+                id: nanoid(),
+                name: event.target.value,
+                isCompleted: false,
+              })
+            }
+          />
+          <Button
+            type="submit"
+            variant="contained"
+            size="large"
+            sx={{
+              width: "90px",
+              height: "55px",
+              backgroundColor: "rgb(53, 53, 53)",
+              fontFamily: '"Poppins", sans-serif',
+              "&:hover": {
+                backgroundColor: "black",
+              },
+            }}
+            disableRipple
+            disableElevation
+          >
+            Add
+          </Button>
+        </form>
       </Stack>
 
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Add new task"
@@ -55,7 +62,7 @@ export const Form = ({ taskList, setTaskList }) => {
           }
         ></input>
         <button type="submit">Add</button>
-      </form>
+      </form> */}
     </>
   );
 };
