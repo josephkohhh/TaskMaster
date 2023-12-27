@@ -1,13 +1,14 @@
 import { Task } from "./Task";
-/**
- * A child component render task list
- * @TaskList
- */
+
 export const TaskList = ({ taskList, setTaskList }) => {
+  const sortedTaskList = taskList
+    .slice()
+    .sort((a, b) => Number(a.isCompleted) - Number(b.isCompleted));
   return (
     <>
       <div>
-        {taskList.map((item) => (
+        <h4>My Tasks</h4>
+        {sortedTaskList.map((item) => (
           <Task
             key={item.id}
             item={item}

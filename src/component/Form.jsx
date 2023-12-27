@@ -1,14 +1,11 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
-/**
- * A child component to save/update user input to an array
- * @Form
- */
+
 export const Form = ({ taskList, setTaskList }) => {
   const [task, setTask] = useState({ id: "", name: "", isCompleted: false });
   const handleSubmit = (event) => {
     event.preventDefault();
-    setTaskList([...taskList, task]);
+    task.name.trim() !== "" ? setTaskList([...taskList, task]) : {};
     setTask({ id: "", name: "", isCompleted: false });
   };
   return (
