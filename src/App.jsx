@@ -1,5 +1,5 @@
 import "./App.css";
-import { TaskMaster } from "./component/TaskMaster";
+import { TaskMaster } from "./components/TaskMaster";
 
 function App() {
   return (
