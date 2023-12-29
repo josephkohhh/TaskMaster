@@ -1,91 +1,46 @@
-import {
-  AppBar,
-  Toolbar,
-  createTheme,
-  ThemeProvider,
-  Typography,
-  Stack,
-  Button,
-} from "@mui/material";
+import { AppBar, Toolbar, Typography, Stack, Button } from "@mui/material";
 
 export const Header = () => {
-  const theme = createTheme({
-    typography: {
-      fontFamily: '"Poppins", sans-serif',
-      h2: {
-        fontSize: "4.5rem",
+  const buttonStyle = {
+    size: "large",
+    disableRipple: true,
+    sx: {
+      color: "white",
+      fontSize: "1.1rem",
+      padding: "15px 30px",
+      transition: "all 300ms ease",
+      "&:hover": {
+        fontWeight: "600",
+        textDecoration: "underline",
+        textUnderlineOffset: "1rem",
       },
     },
-    components: {
-      MuiButton: {
-        styleOverrides: {
-          sizeLarge: {
-            fontSize: "1.3rem",
-            padding: "15px 30px",
-          },
-        },
-      },
-    },
-  });
+  };
+
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <AppBar position="static" color="transparent" elevation={0}>
-          <Toolbar
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              minHeight: "100px",
-              padding: "25px",
-            }}
-          >
-            <Typography variant="h2">TaskMaster</Typography>
+      <AppBar position="static" color="transparent" elevation={0}>
+        <Toolbar
+          sx={{
+            background: "black",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            padding: "15px 0 10px 0",
+            borderRadius: "0 0 20px 20px",
+          }}
+        >
+          <Typography variant="h2" color={"white"}>
+            TaskMaster
+          </Typography>
 
-            <Stack direction="row" spacing={8} sx={{ marginTop: "10px" }}>
-              <Button
-                color="inherit"
-                size="large"
-                disableRipple
-                sx={{
-                  "&:hover": {
-                    backgroundColor: "inherit",
-                    fontWeight: "600",
-                  },
-                }}
-              >
-                Code
-              </Button>
-              <Button
-                color="inherit"
-                size="large"
-                disableRipple
-                sx={{
-                  "&:hover": {
-                    backgroundColor: "inherit",
-                    fontWeight: "600",
-                  },
-                }}
-              >
-                Home
-              </Button>
-              <Button
-                color="inherit"
-                size="large"
-                disableRipple
-                sx={{
-                  "&:hover": {
-                    backgroundColor: "inherit",
-                    fontWeight: "600",
-                  },
-                }}
-              >
-                About
-              </Button>
-            </Stack>
-          </Toolbar>
-        </AppBar>
-      </ThemeProvider>
+          <Stack direction="row" spacing={8} sx={{ marginTop: "10px" }}>
+            <Button {...buttonStyle}>Code</Button>
+            <Button {...buttonStyle}>Home</Button>
+            <Button {...buttonStyle}>About</Button>
+          </Stack>
+        </Toolbar>
+      </AppBar>
     </>
   );
 };

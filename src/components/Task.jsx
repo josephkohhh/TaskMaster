@@ -1,4 +1,6 @@
 import styles from "./task.module.css";
+import { Box, Typography, IconButton } from "@mui/material";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
 export const Task = ({ item, taskList, setTaskList }) => {
   const handleDelete = (item) => {
@@ -13,15 +15,31 @@ export const Task = ({ item, taskList, setTaskList }) => {
   };
   const taskStrike = item.isCompleted ? styles.strike : {};
   return (
-    <>
-      <div>
-        <span className={taskStrike} onClick={() => handeClick(item.id)}>
-          {item.name}
-        </span>
-        <span>
-          <button onClick={() => handleDelete(item)}>X</button>
-        </span>
-      </div>
-    </>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        width: "100%",
+        backgroundColor: "white",
+        padding: "20px",
+      }}
+    >
+      <Typography
+        variant="h6"
+        className={taskStrike}
+        onClick={() => handeClick(item.id)}
+      >
+        {item.name}
+      </Typography>
+      <IconButton
+        onClick={() => handleDelete(item)}
+        aria-label="delete"
+        color="error"
+        size="large"
+        sx={{ marginLeft: "auto", marginTop: "-6px" }}
+      >
+        <HighlightOffIcon />
+      </IconButton>
+    </Box>
   );
 };
