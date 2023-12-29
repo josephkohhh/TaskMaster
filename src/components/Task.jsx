@@ -3,6 +3,9 @@ import { Box, Typography, IconButton } from "@mui/material";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
 export const Task = ({ item, taskList, setTaskList }) => {
+  const strikeOff = {
+    textDecoration: "line-through",
+  };
   const handleDelete = (item) => {
     setTaskList(taskList.filter((i) => i.id !== item.id));
   };
@@ -13,20 +16,23 @@ export const Task = ({ item, taskList, setTaskList }) => {
       )
     );
   };
-  const taskStrike = item.isCompleted ? styles.strike : {};
+  const strikeTask = item.isCompleted ? strikeOff : {};
   return (
     <Box
       sx={{
+        margin: "0 auto",
         display: "flex",
-        flexDirection: "row",
-        width: "100%",
+        alignItems: "center",
+        width: "555px",
         backgroundColor: "white",
-        padding: "20px",
+        padding: "5px 10px",
+        border: "1px solid rgba(0, 0, 0, 0.1)",
+        borderRadius: "10px",
       }}
     >
       <Typography
         variant="h6"
-        className={taskStrike}
+        style={strikeTask}
         onClick={() => handeClick(item.id)}
       >
         {item.name}
@@ -36,7 +42,7 @@ export const Task = ({ item, taskList, setTaskList }) => {
         aria-label="delete"
         color="error"
         size="large"
-        sx={{ marginLeft: "auto", marginTop: "-6px" }}
+        sx={{ marginLeft: "auto" }}
       >
         <HighlightOffIcon />
       </IconButton>

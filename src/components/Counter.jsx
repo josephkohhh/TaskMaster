@@ -16,17 +16,17 @@ export const Counter = ({ totalTask, completedTask }) => {
       spacing={2}
       sx={{
         width: "600px",
-        height: "60px",
+        height: "50px",
         margin: "0 auto",
         marginTop: "10px",
         padding: "10px",
       }}
     >
       <Box sx={boxStyle}>
-        <Typography variant="h5">Total Task: {totalTask}</Typography>
+        <Typography>Total Task: {totalTask}</Typography>
       </Box>
       <Box sx={boxStyle}>
-        <Typography variant="h5">Completed Task: {completedTask}</Typography>
+        <Typography>Completed Task: {completedTask}</Typography>
       </Box>
     </Stack>
   );

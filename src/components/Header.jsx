@@ -8,11 +8,11 @@ export const Header = () => {
       color: "white",
       fontSize: "1.1rem",
       padding: "15px 30px",
-      transition: "all 300ms ease",
       "&:hover": {
         fontWeight: "600",
         textDecoration: "underline",
         textUnderlineOffset: "1rem",
+        background: "none",
       },
     },
   };

@@ -1,5 +1,5 @@
 import { Task } from "./Task";
-import { Box, Typography, Grid } from "@mui/material";
+import { Box, Typography, Grid, Button, Stack } from "@mui/material";
 
 export const TaskList = ({ taskList, setTaskList }) => {
   const sortedTaskList = taskList
@@ -16,33 +16,29 @@ export const TaskList = ({ taskList, setTaskList }) => {
           flexDirection: "column",
           margin: "0 auto",
           marginTop: "15px",
-          alignItems: "center",
           borderRadius: "10px",
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+          padding: "15px 10px 30px 15px ",
         }}
       >
-        <Typography variant="h6" sx={{ marginTop: "10px" }}>
-          My Tasks
-        </Typography>
-        <Grid
-          container
+        <Stack
+          direction={"row"}
           sx={{
-            width: "580px",
-            margin: "0 auto",
-            marginTop: "10px",
-            justifyContent: "center",
-            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+            justifyContent: "space-between",
           }}
         >
-          {sortedTaskList.map((item) => (
-            <Task
-              key={item.id}
-              item={item}
-              taskList={taskList}
-              setTaskList={setTaskList}
-            />
-          ))}
-        </Grid>
+          <Typography variant="h6">My Tasks</Typography>
+          <Button color="error">Clear All</Button>
+        </Stack>
+
+        {sortedTaskList.map((item) => (
+          <Task
+            key={item.id}
+            item={item}
+            taskList={taskList}
+            setTaskList={setTaskList}
+          />
+        ))}
       </Box>
     </>
   );
