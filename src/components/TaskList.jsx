@@ -1,5 +1,5 @@
 import { Task } from "./Task";
-import { Box, Typography, Grid, Button, Stack } from "@mui/material";
+import { Box, Typography, Button, Stack } from "@mui/material";
 
 export const TaskList = ({ taskList, setTaskList }) => {
   const sortedTaskList = taskList
@@ -11,14 +11,14 @@ export const TaskList = ({ taskList, setTaskList }) => {
         sx={{
           backgroundColor: "#F9F9F9",
           width: "600px",
-          minHeight: "340px",
+          minHeight: "100px",
           display: "flex",
           flexDirection: "column",
           margin: "0 auto",
           marginTop: "15px",
           borderRadius: "10px",
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-          padding: "15px 10px 30px 15px ",
+          padding: "15px 15px 30px 15px ",
         }}
       >
         <Stack
@@ -28,7 +28,15 @@ export const TaskList = ({ taskList, setTaskList }) => {
           }}
         >
           <Typography variant="h6">My Tasks</Typography>
-          <Button color="error">Clear All</Button>
+          <Button
+            color="error"
+            disableRipple
+            onClick={() => {
+              setTaskList([]);
+            }}
+          >
+            Clear All
+          </Button>
         </Stack>
 
         {sortedTaskList.map((item) => (

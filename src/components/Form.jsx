@@ -4,9 +4,32 @@ import { Stack, TextField, Button } from "@mui/material";
 
 export const Form = ({ taskList, setTaskList }) => {
   const [task, setTask] = useState({ id: "", name: "", isCompleted: false });
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   task.name.trim() !== "" ? setTaskList([...taskList, task]) : {};
+  //   setTask({ id: "", name: "", isCompleted: false });
+  // };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    task.name.trim() !== "" ? setTaskList([...taskList, task]) : {};
+
+    const taskName = task.name.trim();
+
+    if (taskName === "") {
+      return; // Do nothing if the task name is empty
+    }
+
+    // Check if the task already exists in the taskList
+    const isTaskAdded = taskList.some((task) => task.name.trim() === taskName);
+
+    if (isTaskAdded) {
+      alert(`Task ${taskName} is already added`);
+      return;
+    }
+
+    // If the task is not a duplicate, add it to the taskList
+    setTaskList([...taskList, { ...task, name: taskName }]);
     setTask({ id: "", name: "", isCompleted: false });
   };
   return (
