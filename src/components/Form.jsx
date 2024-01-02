@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
 import { Stack, TextField, Button } from "@mui/material";
 
@@ -10,6 +10,12 @@ export const Form = ({ taskList, setTaskList }) => {
   //   task.name.trim() !== "" ? setTaskList([...taskList, task]) : {};
   //   setTask({ id: "", name: "", isCompleted: false });
   // };
+
+  // Initialize taskList with the storedTaskList from localStorage
+  useEffect(() => {
+    const storedTaskList = JSON.parse(localStorage.getItem("taskList")) || [];
+    setTaskList(storedTaskList);
+  }, [setTaskList]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,7 +35,13 @@ export const Form = ({ taskList, setTaskList }) => {
     }
 
     // If the task is not a duplicate, add it to the taskList
-    setTaskList([...taskList, { ...task, name: taskName }]);
+    const updatedTaskList = [...taskList, { ...task, name: taskName }];
+    setTaskList(updatedTaskList);
+
+    // Update localStorage with the new taskList
+    localStorage.setItem("taskList", JSON.stringify(updatedTaskList));
+
+    // Reset input
     setTask({ id: "", name: "", isCompleted: false });
   };
   return (

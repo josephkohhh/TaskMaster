@@ -1,4 +1,3 @@
-import styles from "./task.module.css";
 import { Box, Typography, IconButton } from "@mui/material";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
@@ -7,14 +6,20 @@ export const Task = ({ item, taskList, setTaskList }) => {
     textDecoration: "line-through",
   };
   const handleDelete = (item) => {
-    setTaskList(taskList.filter((i) => i.id !== item.id));
+    const updatedTaskList = taskList.filter((i) => i.id !== item.id);
+    setTaskList(updatedTaskList);
+
+    // Update local storage with the updated taskList
+    localStorage.setItem("taskList", JSON.stringify(updatedTaskList));
   };
   const handeClick = (id) => {
-    setTaskList(
-      taskList.map((i) =>
-        i.id === id ? { ...i, isCompleted: !i.isCompleted } : i
-      )
+    const updatedTaskList = taskList.map((i) =>
+      i.id === id ? { ...i, isCompleted: !i.isCompleted } : i
     );
+    setTaskList(updatedTaskList);
+
+    // Update local storage with the new taskList
+    localStorage.setItem("taskList", JSON.stringify(updatedTaskList));
   };
   const strikeTask = item.isCompleted ? strikeOff : {};
   return (
