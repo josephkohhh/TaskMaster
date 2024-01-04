@@ -10,6 +10,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { FontTheme } from "./components/FontTheme";
 import { Header } from "./components/Header";
 import { TaskMaster } from "./components/TaskMaster";
+import { About } from "./components/About";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -26,6 +27,8 @@ function App() {
             <Route index element={<TaskMaster />} />
             {/* Explicit route to render TaskMaster when /home is accessed */}
             <Route path="/home" element={<TaskMaster />} />
+            {/* Explicit route to render About when /about is accessed */}
+            <Route path="/about" element={<About />} />
           </Routes>
         </div>
       </Router>
