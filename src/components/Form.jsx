@@ -16,7 +16,7 @@ export const Form = ({ taskList, setTaskList }) => {
   useEffect(() => {
     const storedTaskList = JSON.parse(localStorage.getItem("taskList")) || [];
     setTaskList(storedTaskList);
-  }, [setTaskList]);
+  }, []);
 
   // Function to handle form submission
   const handleSubmit = (event) => {

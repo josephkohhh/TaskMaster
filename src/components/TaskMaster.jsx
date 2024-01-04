@@ -5,7 +5,6 @@
  */
 
 import { useState } from "react";
-import { Header } from "./Header";
 import { Form } from "./Form";
 import { TaskList } from "./TaskList";
 import { Counter } from "./Counter";
@@ -24,8 +23,6 @@ export const TaskMaster = () => {
   // Render the TaskMaster component
   return (
     <>
-      {/* Header component for the task manager */}
-      <Header />
       {/* Counter component displaying the total and completed tasks */}
       <Counter totalTask={totalTask} completedTask={completedTask} />
       {/* Form component for adding new tasks */}
@@ -38,15 +35,14 @@ export const TaskMaster = () => {
 
 /*
  * Component Structure:
- * - Header
  * - Counter
  * - Form
  * - TaskList
  *
  * Explanation:
- * - The TaskMaster component integrates Header, Counter, Form, and TaskList components.
+ * - The TaskMaster component integrates Counter, Form, and TaskList components.
  * - It manages the taskList state using useState and retrieves the stored task list from local storage.
- * - The Counter component shows the total and completed tasks.
+ * - The Counter component displays the total and completed tasks.
  * - The Form component allows users to add new tasks to the task list.
  * - The TaskList component displays and manages the list of tasks.
  */

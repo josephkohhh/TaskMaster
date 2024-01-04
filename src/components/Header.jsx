@@ -5,6 +5,7 @@
  */
 
 import { AppBar, Toolbar, Typography, Stack, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   // Styling object for the navigation buttons
@@ -46,9 +47,19 @@ export const Header = () => {
           </Typography>
           {/* Navigation buttons */}
           <Stack direction="row" spacing={8} sx={{ marginTop: "10px" }}>
-            <Button {...buttonStyle}>Code</Button>
-            <Button {...buttonStyle}>Home</Button>
-            <Button {...buttonStyle}>About</Button>
+            <a
+              href="https://github.com/josephkohhh/TaskMaster"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button {...buttonStyle}>Code</Button>
+            </a>
+            <Link to="/home">
+              <Button {...buttonStyle}>Home</Button>
+            </Link>
+            <Link to="/about">
+              <Button {...buttonStyle}>About</Button>
+            </Link>
           </Stack>
         </Toolbar>
       </AppBar>
