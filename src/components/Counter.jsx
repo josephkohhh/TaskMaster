@@ -31,14 +31,14 @@ export const Counter = ({ totalTask, completedTask }) => {
         padding: "10px",
       }}
     >
-      {/* Box for displaying the total task count */}
-      <Box sx={boxStyle}>
-        <Typography>Total Task: {totalTask}</Typography>
-      </Box>
-
       {/* Box for displaying the completed task count */}
       <Box sx={boxStyle}>
         <Typography>Completed Task: {completedTask}</Typography>
+      </Box>
+
+      {/* Box for displaying the total task count */}
+      <Box sx={boxStyle}>
+        <Typography>Total Task: {totalTask}</Typography>
       </Box>
     </Stack>
   );
