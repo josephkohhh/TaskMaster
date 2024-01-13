@@ -1,5 +1,6 @@
 import { Stack, Typography, IconButton } from "@mui/material";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import Tooltip from "@mui/material/Tooltip";
 
 export const Task = ({ item, taskList, setTaskList }) => {
   const handleDelete = (item) => {
@@ -22,6 +23,7 @@ export const Task = ({ item, taskList, setTaskList }) => {
     color: "green",
   };
   const strikeOffTask = item.isCompleted ? strikeOff : {};
+
   return (
     <>
       <Stack
@@ -37,13 +39,15 @@ export const Task = ({ item, taskList, setTaskList }) => {
           borderRadius: "10px",
         }}
       >
-        <Typography
-          sx={{ paddingLeft: "5px", cursor: "pointer" }}
-          style={strikeOffTask}
-          onClick={() => handleClick(item.id)}
-        >
-          {item.name}
-        </Typography>
+        <Tooltip title="Click to toggle completion">
+          <Typography
+            sx={{ paddingLeft: "5px", cursor: "pointer" }}
+            style={strikeOffTask}
+            onClick={() => handleClick(item.id)}
+          >
+            {item.name}
+          </Typography>
+        </Tooltip>
         <IconButton color="error" onClick={() => handleDelete(item)}>
           <HighlightOffIcon />
         </IconButton>

@@ -4,6 +4,13 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
 } from "@mui/material";
 import { useState } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -16,6 +23,8 @@ import {
   arrayFilterCodeSnippet,
   arraySomeCodeSnippet,
   arraySliceSortCodeSnippet,
+  viteCodeSnippet,
+  muiCodeSnippet,
 } from "./Constants";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import jsx from "react-syntax-highlighter/dist/esm/languages/prism/js-extras";
@@ -29,6 +38,23 @@ export const About = () => {
   const handleChange = (isExpanded, panel) => {
     setExpanded(isExpanded ? panel : false);
   };
+  const tableData = [
+    {
+      feature: "Counter",
+      description: "Keep track the amount of task and task completed",
+    },
+    { feature: "Form", description: "To input task to a tasklist" },
+    { feature: "Clear all button", description: "To delete all task" },
+    { feature: "Delete button", description: "To delete specific task" },
+    {
+      feature: "Toggle task completion",
+      description: "Click on task title to toggle completion",
+    },
+    {
+      feature: "Local storage",
+      description: "Tasks is updated to web local storage",
+    },
+  ];
   return (
     <Box sx={{ marginBottom: "150px" }}>
       <Box sx={{ width: "70%", margin: "0 auto", marginTop: "30px" }}>
@@ -97,8 +123,106 @@ export const About = () => {
             fontSize: { xs: "1.5rem", sm: "2rem", md: "2rem" },
           }}
         >
+          App Features
+        </Typography>
+        <TableContainer component={Paper} style={{ overflowX: "auto" }}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell
+                  sx={{
+                    fontWeight: "bold",
+                    fontSize: "1rem",
+                    border: "1px solid #ddd",
+                  }}
+                >
+                  Feature
+                </TableCell>
+                <TableCell
+                  sx={{
+                    fontWeight: "bold",
+                    fontSize: "1rem",
+                    border: "1px solid #ddd",
+                  }}
+                >
+                  Description
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {tableData.map((row, index) => (
+                <TableRow key={index} sx={{ border: "1px solid #ddd" }}>
+                  <TableCell sx={{ border: "1px solid #ddd" }}>
+                    {row.feature}
+                  </TableCell>
+                  <TableCell sx={{ border: "1px solid #ddd" }}>
+                    {row.description}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Box>
+      <Box
+        sx={{
+          width: "70%",
+          margin: "0 auto",
+          marginTop: "30px",
+        }}
+      >
+        <Typography
+          sx={{
+            textAlign: "center",
+            marginBottom: "20px",
+            fontSize: { xs: "1.5rem", sm: "2rem", md: "2rem" },
+          }}
+        >
           Key Concepts Applied
         </Typography>
+        {/* Build Tools Accordion */}
+        <Accordion
+          expanded={expanded === "panel6"}
+          onChange={(event, isExpanded) => handleChange(isExpanded, "panel6")}
+        >
+          <AccordionSummary
+            id="panel6-header"
+            aria-controls="panel6-content"
+            expandIcon={<ExpandMoreIcon />}
+          >
+            <Typography
+              sx={{ fontSize: { xs: ".8rem", sm: "1rem", md: "1rem" } }}
+            >
+              Vite
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography
+              sx={{ fontSize: { xs: ".8rem", sm: "1rem", md: "1rem" } }}
+            >
+              Vite is a javascript build tool used to create frontend projects.
+            </Typography>
+            <SyntaxHighlighter language="jsx" style={vsDark}>
+              {viteCodeSnippet}
+            </SyntaxHighlighter>
+            <Typography
+              sx={{ fontSize: { xs: ".8rem", sm: "1rem", md: "1rem" } }}
+            >
+              <b>Development Mode:</b> Vite relies on native ES module support
+              in modern browsers for optimal development performance. <br />
+              <br />
+              <b>Production Build:</b> When building for production, Vite (using
+              Rollup under the hood) can transpile and bundle the code to ensure
+              compatibility with a wider range of browsers.
+              <br />
+              <br />
+              Vite is used to create this project instead of traditional CRA. It
+              is much faster and also has built in typescript support. However,
+              it does not contain built in server side rendering hence using
+              Vite for client side application is a good choice.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
 
         {/* React Router Accordon */}
         <Accordion
@@ -307,6 +431,36 @@ export const About = () => {
               The isCompleted property is converted to number 1 for TRUE and 0
               for FALSE as to ensure that the comparison is done numerically
               rather than lexicographically.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+
+        {/* Material UI Accordon */}
+        <Accordion
+          expanded={expanded === "panel7"}
+          onChange={(event, isExpanded) => handleChange(isExpanded, "panel7")}
+        >
+          <AccordionSummary
+            id="panel7-header"
+            aria-controls="panel7-content"
+            expandIcon={<ExpandMoreIcon />}
+          >
+            <Typography
+              sx={{ fontSize: { xs: ".8rem", sm: "1rem", md: "1rem" } }}
+            >
+              Material UI
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <SyntaxHighlighter language="jsx" style={vsDark}>
+              {muiCodeSnippet}
+            </SyntaxHighlighter>
+            <Typography
+              sx={{ fontSize: { xs: ".8rem", sm: "1rem", md: "1rem" } }}
+            >
+              A react UI framework that provides a set of customizable and
+              reusable components, styles, and themes following the google
+              material design guidelines
             </Typography>
           </AccordionDetails>
         </Accordion>

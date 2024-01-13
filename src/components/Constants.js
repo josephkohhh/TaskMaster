@@ -37,3 +37,6 @@ export const arraySomeCodeSnippet = `export const isTaskAdded = taskList.some((t
 export const arraySliceSortCodeSnippet = `export const sortedTaskList = getTaskListFromLocalStorage()
 .slice()
 .sort((a, b) => Number(a.isCompleted) - Number(b.isCompleted));`;
+export const viteCodeSnippet = `npx create-vite project_name --template react`;
+export const muiCodeSnippet = `npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/icons-material`;
