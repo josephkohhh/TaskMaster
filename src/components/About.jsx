@@ -40,6 +40,10 @@ export const About = () => {
   };
   const tableData = [
     {
+      feature: "Navbar",
+      description: "App bar to navigate around",
+    },
+    {
       feature: "Counter",
       description: "Keep track the amount of task and task completed",
     },
@@ -53,6 +57,10 @@ export const About = () => {
     {
       feature: "Local storage",
       description: "Tasks is updated to web local storage",
+    },
+    {
+      feature: "Responsiveness",
+      description: "App is responsive which supports all devices",
     },
   ];
   return (
