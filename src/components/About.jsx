@@ -104,7 +104,7 @@ export const About = () => {
             borderRadius: "10px",
             boxSizing: "border-box",
           }}
-          src="./src/assets/component-diagram.png"
+          src="./src/assets/images/component-diagram.png"
           alt="component-diagram"
         />
         <Typography
