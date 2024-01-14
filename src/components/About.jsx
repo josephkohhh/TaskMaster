@@ -60,7 +60,7 @@ export const About = () => {
     },
     {
       feature: "Responsiveness",
-      description: "App is responsive which supports all devices",
+      description: "App is responsive which support all devices",
     },
   ];
   return (
@@ -468,7 +468,7 @@ export const About = () => {
             >
               A react UI framework that provides a set of customizable and
               reusable components, styles, and themes following the google
-              material design guidelines
+              material design guidelines.
             </Typography>
           </AccordionDetails>
         </Accordion>

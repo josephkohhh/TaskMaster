@@ -1,8 +1,41 @@
-# React + Vite
+# TaskMaster (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repo contains source code for TaskMaster, a responsive and simple todo list web app.
 
-Currently, two official plugins are available:
+<img src="/assets/images/web-ss.PNG" alt="Project Desktop View" title="Desktop View" width="550px" height="500px">
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<img src="/assets/images/mobile-ss.PNG" alt="Project Mobile View" title="Mobile View" width="280px" height="500px">
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Features](#features)
+
+## Installation
+
+If you haven't install Nodejs, please download first from https://nodejs.org/en/download
+
+To install and set up your project:
+
+```bash
+cd path/to/your-desired-directory
+
+git clone -b main https://github.com/josephkohhh/TaskMaster.git
+
+cd TaskMaster
+
+npm install
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/icons-material
+npm install nanoid
+npm install react-router-dom
+npm install react-syntax-highlighter
+
+```
+
+## Features
+
+- Add Todo Task
+- Add/Delete/Clear Task(s)
+- Toggle Task Completion
+- Task Counter
