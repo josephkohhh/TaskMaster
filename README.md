@@ -20,7 +20,7 @@ To install and set up your project:
 ```bash
 cd path/to/your-desired-directory
 
-git clone -b main https://github.com/josephkohhh/TaskMaster.git
+git clone -b feature/react https://github.com/josephkohhh/TaskMaster.git
 
 cd TaskMaster
 
