@@ -69,7 +69,7 @@ export const About = () => {
     },
     {
       feature: "Responsiveness",
-      description: "App is responsive which support all devices",
+      description: "App is responsive which support mobile devices",
     },
   ];
   return (
