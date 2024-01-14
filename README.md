@@ -39,3 +39,4 @@ npm install react-syntax-highlighter
 - Add/Delete/Clear Task(s)
 - Toggle Task Completion
 - Task Counter
+- TaskList State Saved in Web Local Storage
