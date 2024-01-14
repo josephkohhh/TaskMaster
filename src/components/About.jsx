@@ -33,6 +33,7 @@ import {
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import jsx from "react-syntax-highlighter/dist/esm/languages/prism/js-extras";
 import vsDark from "react-syntax-highlighter/dist/esm/styles/prism/vs-dark";
+import componentDiagram from "../assets/images/component-diagram.png";
 
 SyntaxHighlighter.registerLanguage("jsx", jsx);
 
@@ -115,7 +116,7 @@ export const About = () => {
             borderRadius: "10px",
             boxSizing: "border-box",
           }}
-          src="./src/assets/images/component-diagram.png"
+          src={componentDiagram}
           alt="component-diagram"
         />
         <Typography
