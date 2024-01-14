@@ -1,6 +1,11 @@
+// File: Counter.jsx
+// Author: Joseph Kogh
+// Description: This component displays task statistics and adjusts its layout based on screen size.
+
 import React from "react";
 import { Stack, Box, Typography, useMediaQuery } from "@mui/material";
 
+// Main styles for the task counter boxes
 const boxStyle = {
   sx: {
     backgroundColor: "#F9F9F9",
@@ -14,6 +19,7 @@ const boxStyle = {
   },
 };
 
+// Styles for the task counter boxes on smaller screens
 const mobileBoxStyle = {
   sx: {
     backgroundColor: "#F9F9F9",
@@ -26,12 +32,15 @@ const mobileBoxStyle = {
   },
 };
 
+// Counter component
 export const Counter = ({ totalTask, completedTask }) => {
+  // Media queries to determine screen size
   const isXsScreen = useMediaQuery("(max-width:600px)");
   const isXXsScreen = useMediaQuery("(max-width:350px)");
 
   return (
     <>
+      {/* Counter layout for larger screens (width > 600px) */}
       {!isXsScreen && (
         <Stack
           direction={"row"}
@@ -51,6 +60,8 @@ export const Counter = ({ totalTask, completedTask }) => {
           </Box>
         </Stack>
       )}
+
+      {/* Counter layout for medium screens (width > 350px and <= 600px) */}
       {isXsScreen && !isXXsScreen && (
         <Stack
           direction={"column"}
@@ -70,6 +81,8 @@ export const Counter = ({ totalTask, completedTask }) => {
           </Box>
         </Stack>
       )}
+
+      {/* Counter layout for smallest screens (width <= 350px) */}
       {isXXsScreen && (
         <Stack
           direction={"column"}

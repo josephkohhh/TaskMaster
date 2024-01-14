@@ -1,7 +1,7 @@
 /*
  * File: FontTheme.jsx
  * Author: Joseph Koh
- * Description: This file contains FontTheme component to standardize the font-family for MUI Typography
+ * Description: This component contains FontTheme component to standardize the font-family for MUI Typography
  */
 
 // Import the createTheme function from Material-UI

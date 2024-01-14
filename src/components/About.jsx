@@ -1,3 +1,7 @@
+// File: About.jsx
+// Author: Joseph Koh
+// Description: This component showcase the component diagram, features, and key concepts applied in the TaskMaster app.
+
 import {
   Box,
   Typography,
@@ -32,12 +36,16 @@ import vsDark from "react-syntax-highlighter/dist/esm/styles/prism/vs-dark";
 
 SyntaxHighlighter.registerLanguage("jsx", jsx);
 
+// About component
 export const About = () => {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(false); // State for managing accordion expansion
 
+  // Function to handle accordion expansion change
   const handleChange = (isExpanded, panel) => {
     setExpanded(isExpanded ? panel : false);
   };
+
+  // Data for the features table
   const tableData = [
     {
       feature: "Navbar",
@@ -65,6 +73,7 @@ export const About = () => {
   ];
   return (
     <Box sx={{ marginBottom: "150px" }}>
+      {/* Introduction Title */}
       <Box sx={{ width: "70%", margin: "0 auto", marginTop: "30px" }}>
         <Typography
           sx={{
@@ -88,6 +97,8 @@ export const About = () => {
           fundamental concepts
         </Typography>
       </Box>
+
+      {/* Component Diagram */}
       <Box
         sx={{
           width: "50%",
@@ -117,6 +128,7 @@ export const About = () => {
         </Typography>
       </Box>
 
+      {/* App Features Table */}
       <Box
         sx={{
           width: "70%",
@@ -172,6 +184,8 @@ export const About = () => {
           </Table>
         </TableContainer>
       </Box>
+
+      {/* Key Concepts Accordion */}
       <Box
         sx={{
           width: "70%",

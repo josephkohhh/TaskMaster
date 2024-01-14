@@ -1,19 +1,28 @@
+// File: TaskList.jsx
+// Author: Joseph Koh
+// Description: This component displays the list of tasks which is sorted by completion status.
+
 import { Box, Stack, Typography, Button, useMediaQuery } from "@mui/material";
 import { Task } from "./Task";
 
+// TaskList component
 export const TaskList = ({ setTaskList }) => {
+  // Media queries to determine screen size
   const isXsScreen = useMediaQuery("(max-width:600px)");
   const isXXsScreen = useMediaQuery("(max-width:450px)");
   const isXXXsScreen = useMediaQuery("(max-width:350px)");
 
+  // Function to get task list from localStorage
   const getTaskListFromLocalStorage = () =>
     JSON.parse(localStorage.getItem("taskList")) || [];
 
+  // Initialize task list and sorted task list
   const taskList = getTaskListFromLocalStorage();
   const sortedTaskList = getTaskListFromLocalStorage()
     .slice()
     .sort((a, b) => Number(a.isCompleted) - Number(b.isCompleted));
 
+  // Function for clearing all tasks
   const handleClearAll = () => {
     setTaskList([]);
     localStorage.removeItem("taskList");
@@ -21,6 +30,7 @@ export const TaskList = ({ setTaskList }) => {
 
   return (
     <>
+      {/* Tasklist for larger screens (width > 600px) */}
       {!isXsScreen && (
         <Box
           sx={{
@@ -59,6 +69,7 @@ export const TaskList = ({ setTaskList }) => {
         </Box>
       )}
 
+      {/* Tasklist for medium screens (width <= 600px and > 450px) */}
       {isXsScreen && !isXXsScreen && (
         <Box
           sx={{
@@ -98,6 +109,7 @@ export const TaskList = ({ setTaskList }) => {
         </Box>
       )}
 
+      {/* Tasklist for smaller screens (width <= 450px and > 350px) */}
       {isXXsScreen && !isXXXsScreen && (
         <Box
           sx={{
@@ -137,6 +149,7 @@ export const TaskList = ({ setTaskList }) => {
         </Box>
       )}
 
+      {/* Tasklist for smallest screens (width <= 350px) */}
       {isXXXsScreen && (
         <Box
           sx={{
