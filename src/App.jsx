@@ -19,18 +19,17 @@ function App() {
     // Apply the FontTheme using MUI's ThemeProvider
     <ThemeProvider theme={FontTheme}>
       <Router>
-        <div>
-          {/* Header component for the app's navigational bar */}
-          <Header />
-          <Routes>
-            {/* Default route to render TaskMaster when no path is specified */}
-            <Route index element={<TaskMaster />} />
-            {/* Explicit route to render TaskMaster when /home is accessed */}
-            <Route path="/home" element={<TaskMaster />} />
-            {/* Explicit route to render About when /about is accessed */}
-            <Route path="/about" element={<About />} />
-          </Routes>
-        </div>
+        {/* Header component for the app's navigational bar */}
+        <Header />
+
+        <Routes>
+          {/* Default route to render TaskMaster when no path is specified */}
+          <Route index element={<TaskMaster />} />
+          {/* Explicit route to render TaskMaster when /home is accessed */}
+          <Route path="/home" element={<TaskMaster />} />
+          {/* Explicit route to render About when /about is accessed */}
+          <Route path="/about" element={<About />} />
+        </Routes>
       </Router>
     </ThemeProvider>
   );

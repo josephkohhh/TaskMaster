@@ -28,6 +28,8 @@ import {
   arraySomeCodeSnippet,
   arraySliceSortCodeSnippet,
   viteCodeSnippet,
+  viteDevCodeSnippet,
+  viteProdCodeSnippet,
   muiCodeSnippet,
 } from "./Constants";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -54,22 +56,22 @@ export const About = () => {
     },
     {
       feature: "Counter",
-      description: "Keep track the amount of task and task completed",
+      description: "To keep track the number of task",
     },
-    { feature: "Form", description: "To input task to a tasklist" },
+    { feature: "Form", description: "To add new task" },
     { feature: "Clear all button", description: "To delete all task" },
-    { feature: "Delete button", description: "To delete specific task" },
+    { feature: "Delete button", description: "To delete selected task" },
     {
       feature: "Toggle task completion",
       description: "Click on task title to toggle completion",
     },
     {
       feature: "Local storage",
-      description: "Tasks is updated to web local storage",
+      description: "Task is saved to web local storage",
     },
     {
       feature: "Responsiveness",
-      description: "App is responsive which support mobile devices",
+      description: "App is responsive which supports mobile devices",
     },
   ];
   return (
@@ -231,9 +233,22 @@ export const About = () => {
             <Typography
               sx={{ fontSize: { xs: ".8rem", sm: "1rem", md: "1rem" } }}
             >
+              The code snippet above is the command line to create a react +
+              vite app project
+            </Typography>
+            <br />
+            <SyntaxHighlighter language="jsx" style={vsDark}>
+              {viteDevCodeSnippet}
+            </SyntaxHighlighter>
+            <Typography
+              sx={{ fontSize: { xs: ".8rem", sm: "1rem", md: "1rem" } }}
+            >
               <b>Development Mode:</b> Vite relies on native ES module support
               in modern browsers for optimal development performance. <br />
               <br />
+              <SyntaxHighlighter language="jsx" style={vsDark}>
+                {viteProdCodeSnippet}
+              </SyntaxHighlighter>
               <b>Production Build:</b> When building for production, Vite (using
               Rollup under the hood) can transpile and bundle the code to ensure
               compatibility with a wider range of browsers.

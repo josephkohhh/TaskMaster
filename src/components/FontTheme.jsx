@@ -11,6 +11,6 @@ import { createTheme } from "@mui/material/styles";
 export const FontTheme = createTheme({
   // Customize the typography settings
   typography: {
-    fontFamily: '"Poppins", sans-serif',
+    fontFamily: "Poppins, sans-serif",
   },
 });

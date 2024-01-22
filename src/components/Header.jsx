@@ -23,9 +23,10 @@ import { Link } from "react-router-dom";
 const navButtonStyle = {
   disableRipple: true,
   sx: {
-    color: "white",
+    color: "#ECEFF7",
     "&:hover": {
       fontWeight: "600",
+      color: "#FFFF",
       textDecoration: "underline",
       textUnderlineOffset: "0.5rem",
     },
