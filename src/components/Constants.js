@@ -10,14 +10,14 @@ export const routerCodeSnippet = `<Router>
     <Route path="/about" element={<About />} />
   </Routes>
 </Router>`;
-export const useStateCodeSnippet = `export const [task, setTask] = useState({ id: "", name: "", isCompleted: false });
-export const [taskList, setTaskList] = useState([]);`;
+export const useStateCodeSnippet = ` const [task, setTask] = useState({ id: "", name: "", isCompleted: false });
+ const [taskList, setTaskList] = useState([]);`;
 export const useEffectCodeSnippet = `useEffect(() => {
-  export const storedTaskList = JSON.parse(localStorage.getItem("taskList")) || [];
+  const storedTaskList = JSON.parse(localStorage.getItem("taskList")) || [];
   setTaskList(storedTaskList);
 }, []);`;
 export const localStorageCodeSnippet = `// Get
-export const getTaskListFromLocalStorage = () => JSON.parse(localStorage.getItem("taskList")) || [];
+const getTaskListFromLocalStorage = () => JSON.parse(localStorage.getItem("taskList")) || [];
 // Set
 localStorage.setItem("taskList", JSON.stringify(updatedTaskList));
 // Delete
@@ -30,9 +30,9 @@ export const arrayMapCodeSnippet = `{sortedTaskList.map((item) => (
   setTaskList={setTaskList}
 />
 ))}`;
-export const arrayFilterCodeSnippet = `export const updatedTaskList = taskList.filter((i) => i.id !== item.id);`;
-export const arraySomeCodeSnippet = `export const isTaskAdded = taskList.some((task) => task.name.trim() === taskName);`;
-export const arraySliceSortCodeSnippet = `export const sortedTaskList = getTaskListFromLocalStorage()
+export const arrayFilterCodeSnippet = `const updatedTaskList = taskList.filter((i) => i.id !== item.id);`;
+export const arraySomeCodeSnippet = `const isTaskAdded = taskList.some((task) => task.name.trim() === taskName);`;
+export const arraySliceSortCodeSnippet = `const sortedTaskList = getTaskListFromLocalStorage()
 .slice()
 .sort((a, b) => Number(a.isCompleted) - Number(b.isCompleted));`;
 export const viteCodeSnippet = `npx create-vite project_name --template react`;
