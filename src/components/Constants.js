@@ -1,5 +1,4 @@
 export const routerCodeSnippet = `<Router>
-<div>
   {/* Header component for the app's navigational bar */}
   <Header />
   <Routes>
@@ -10,7 +9,6 @@ export const routerCodeSnippet = `<Router>
     {/* Explicit route to render About when /about is accessed */}
     <Route path="/about" element={<About />} />
   </Routes>
-</div>
 </Router>`;
 export const useStateCodeSnippet = `export const [task, setTask] = useState({ id: "", name: "", isCompleted: false });
 export const [taskList, setTaskList] = useState([]);`;
