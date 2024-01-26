@@ -246,9 +246,13 @@ export const About = () => {
               <b>Development Mode:</b> Vite relies on native ES module support
               in modern browsers for optimal development performance. <br />
               <br />
-              <SyntaxHighlighter language="jsx" style={vsDark}>
-                {viteProdCodeSnippet}
-              </SyntaxHighlighter>
+            </Typography>
+            <SyntaxHighlighter language="jsx" style={vsDark}>
+              {viteProdCodeSnippet}
+            </SyntaxHighlighter>
+            <Typography
+              sx={{ fontSize: { xs: ".8rem", sm: "1rem", md: "1rem" } }}
+            >
               <b>Production Build:</b> When building for production, Vite (using
               Rollup under the hood) can transpile and bundle the code to ensure
               compatibility with a wider range of browsers.
