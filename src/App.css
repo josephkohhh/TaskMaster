@@ -1,12 +1,11 @@
 @font-face {
   font-family: "Poppins";
   src: url("./fonts/Poppins-Regular.ttf") format("truetype");
-  /* Add additional font weights and styles as needed */
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  min-height: 1000px;
+  min-height: 900px;
   margin: 0;
   padding: 0;
 }
