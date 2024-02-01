@@ -25,11 +25,6 @@ git clone -b feature/react https://github.com/josephkohhh/TaskMaster.git
 cd TaskMaster
 
 npm install
-npm install @mui/material @emotion/react @emotion/styled
-npm install @mui/icons-material
-npm install nanoid
-npm install react-router-dom
-npm install react-syntax-highlighter
 
 ```
 
