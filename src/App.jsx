@@ -1,37 +1,23 @@
-/*
+/**
  * File: App.jsx
  * Author: Joseph Koh
- * Description: This file contains the main App component for rendering the TaskMaster app.
+ * Description: Entry point for the React application
  */
 
-// Import necessary styles and components
 import "./App.css";
-import { ThemeProvider } from "@mui/material/styles";
-import { FontTheme } from "./components/FontTheme";
-import { Header } from "./components/Header";
-import { TaskMaster } from "./components/TaskMaster";
-import { About } from "./components/About";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { RouterComponent } from "./lib/RouterComponent";
+import { FontTheme } from "./components/ui/FontTheme";
+import { ThemeProvider } from "@mui/material";
 
 function App() {
-  // Render the App component
   return (
-    // Apply the FontTheme using MUI's ThemeProvider
-    <ThemeProvider theme={FontTheme}>
-      <Router>
-        {/* Header component for the app's navigational bar */}
-        <Header />
-
-        <Routes>
-          {/* Default route to render TaskMaster when no path is specified */}
-          <Route index element={<TaskMaster />} />
-          {/* Explicit route to render TaskMaster when /home is accessed */}
-          <Route path="/home" element={<TaskMaster />} />
-          {/* Explicit route to render About when /about is accessed */}
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </Router>
-    </ThemeProvider>
+    <>
+      {/* Wrap components with custom theme */}
+      <ThemeProvider theme={FontTheme}>
+        {/* Render the RouterComponent for managing routes */}
+        <RouterComponent />
+      </ThemeProvider>
+    </>
   );
 }
 
