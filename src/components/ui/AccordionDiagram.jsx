@@ -157,9 +157,9 @@ export const AccordionDiagram = () => {
           />
           <Typography {...fontSizing} style={textAlignStart}>
             Using built in useEffect hook to listen to window resize on
-            component mount. When window is resize, the opened menu will be
+            component mount. When window is resized, the opened menu will be
             closed. Cleanup function will remove the event listener on component
-            unmount. The effect has no dependencies and will only run on inital
+            unmount. The effect has no dependencies and will only run on initial
             mount.
           </Typography>
         </AccordionDetails>
