@@ -178,9 +178,6 @@ export const AccordionDiagram = () => {
           <Typography>Local Storage</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography {...fontSizing} style={textAlignStart}>
-            React Hooks
-          </Typography>
           <ReactSyntaxHighligherComponent
             code={localStorageCodeSnippet}
             language={"javascript"}
