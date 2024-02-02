@@ -2,7 +2,7 @@
 
 This repo contains source code for TaskMaster, a responsive and simple todo list web app.
 
-<img src="/src/assets/images/tm-banner.PNG" alt="Banner Image" title="Banner Image" width="500px" height="450px">
+<img src="/src/assets/images/tm-banner.PNG" alt="Banner Image" title="Banner Image" width="550px" height="450px">
 
 ## Table of Contents
 
