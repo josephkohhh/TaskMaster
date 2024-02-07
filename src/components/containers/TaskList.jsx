@@ -1,12 +1,12 @@
 /**
  * File: TaskList.jsx
  * Author: Joseph Koh
- * Description: Represents a container for displaying a list of tasks.
+ * Description: Represents a container for displaying a list of tasks
  */
 
 import { Box, Stack, Button, Typography } from "@mui/material";
-import { Task } from "../ui/Task";
-import { clearFromLocalStorage } from "../../services/api/localStorageService";
+import { Task } from "./Task";
+import { clearFromLocalStorage } from "../../services/localStorage";
 
 export const TaskList = ({ sortedTaskList, setTaskList }) => {
   // Function to clear taskList in state and localStorage

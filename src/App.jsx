@@ -6,7 +6,7 @@
 
 import "./App.css";
 import { RouterComponent } from "./lib/RouterComponent";
-import { FontTheme } from "./components/ui/FontTheme";
+import { FontTheme } from "./theme/FontTheme";
 import { ThemeProvider } from "@mui/material";
 
 function App() {

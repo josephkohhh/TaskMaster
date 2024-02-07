@@ -1,14 +1,14 @@
 /**
  * File: TaskMaster.jsx
  * Author: Joseph koh
- * Description: Main component that manages the TaskMaster app.
+ * Description: Main component that manages the TaskMaster app
  */
 
 import { useState } from "react";
 import { Counter } from "../ui/Counter";
 import { Form } from "../form/Form";
 import { TaskList } from "./TaskList";
-import { getFromLocalStorage } from "../../services/api/localStorageService";
+import { getFromLocalStorage } from "../../services/localStorage";
 
 export const TaskMaster = () => {
   // Initialize taskList state with data from local storage or an empty array

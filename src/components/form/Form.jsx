@@ -1,7 +1,7 @@
 /**
  * File: Form.jsx
  * Author: Joseph Koh
- * Description: Represents a form for adding tasks to the TaskList.
+ * Description: Represents a form for adding tasks to the TaskList
  */
 
 import { Stack } from "@mui/material";
@@ -9,7 +9,7 @@ import { useState } from "react";
 import { nanoid } from "nanoid";
 import { TextInput } from "../ui/TextInput";
 import { SubmitButton } from "../ui/SubmitButton";
-import { saveToLocalStorage } from "../../services/api/localStorageService";
+import { saveToLocalStorage } from "../../services/localStorage";
 
 export const Form = ({ taskList, setTaskList }) => {
   // State for managing the input task

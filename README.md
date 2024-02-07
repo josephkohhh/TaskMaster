@@ -6,9 +6,9 @@ This repo contains source code for TaskMaster, a responsive and simple todo list
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Folder Structure](#folderstructure)
-- [Features](#features)
+- [Installation](#Unstallation)
+- [Folder Structure](#FolderStructure)
+- [Features](#Features)
 
 ## Installation
 
@@ -48,6 +48,7 @@ TaskMaster
 │  │     └─ tm-banner.PNG
 │  ├─ components
 │  │  ├─ containers
+│  │  │  ├─ Task.jsx
 │  │  │  ├─ TaskList.jsx
 │  │  │  └─ TaskMaster.jsx
 │  │  ├─ form
@@ -56,14 +57,14 @@ TaskMaster
 │  │     ├─ AccordionDiagram.jsx
 │  │     ├─ Counter.jsx
 │  │     ├─ Diagram.jsx
-│  │     ├─ FontTheme.js
 │  │     ├─ Navbar.jsx
 │  │     ├─ SubmitButton.jsx
 │  │     ├─ TableDiagram.jsx
-│  │     ├─ Task.jsx
 │  │     └─ TextInput.jsx
 │  ├─ data
 │  │  └─ constants.js
+│  ├─ theme
+│  │  └─ FontTheme.js
 │  ├─ fonts
 │  │  ├─ Poppins-Regular.ttf
 │  │  └─ ...
@@ -74,8 +75,7 @@ TaskMaster
 │  │  ├─ About.jsx
 │  │  └─ Home.jsx
 │  └─ services
-│     └─ api
-│        └─ localStorageService.js
+│     └─ localStorage.js
 └─ vite.config.js
 
 ```

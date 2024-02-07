@@ -6,7 +6,7 @@
 
 import { Stack, Typography, IconButton } from "@mui/material";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import { saveToLocalStorage } from "../../services/api/localStorageService";
+import { saveToLocalStorage } from "../../services/localStorage";
 
 export const Task = ({ item, setTaskList }) => {
   // Function to handle deletion of a task
