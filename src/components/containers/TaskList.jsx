@@ -7,6 +7,7 @@
 import { Box, Stack, Button, Typography } from "@mui/material";
 import { Task } from "./Task";
 import { clearFromLocalStorage } from "../../services/localStorage";
+import { EmptyList } from "../ui/EmptyList";
 
 export const TaskList = ({ sortedTaskList, setTaskList }) => {
   // Function to clear taskList in state and localStorage
@@ -46,6 +47,7 @@ export const TaskList = ({ sortedTaskList, setTaskList }) => {
               color="error"
               size="small"
               onClick={handleClearAll}
+              disabled={sortedTaskList.length === 0}
             >
               Clear All
             </Button>
@@ -58,10 +60,15 @@ export const TaskList = ({ sortedTaskList, setTaskList }) => {
             marginTop={"10px"}
             minHeight={"300px"}
           >
-            {/* Render Task component */}
-            {sortedTaskList.map((item) => (
-              <Task key={item.id} item={item} setTaskList={setTaskList} />
-            ))}
+            {sortedTaskList.length === 0 ? (
+              // render if empty list
+              <EmptyList />
+            ) : (
+              // render if list > 0
+              sortedTaskList.map((item) => (
+                <Task key={item.id} item={item} setTaskList={setTaskList} />
+              ))
+            )}
           </Stack>
         </Box>
       </Box>
